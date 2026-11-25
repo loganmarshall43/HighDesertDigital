@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>High Desert Digital | Web, Marketing & Media for Growing Brands</title>
-<meta name="description" content="Web design, Shopify development, marketing, and media production for growing brands. Based in Cedar City, Utah.">
+<meta name="description" content="Web design, mobile apps, Shopify development, marketing, and media production for growing brands. Based in Cedar City, Utah.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -220,10 +220,14 @@
   #services { background: #0a1310; }
   .services-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(6, minmax(0, 1fr));
     gap: 2px;
   }
+  /* Seven services: two wide cards, three across, two wide cards. */
+  .service-category:nth-child(-n+2),
+  .service-category:nth-child(n+6) { grid-column: span 3; }
   .service-category {
+    grid-column: span 2;
     background: rgba(255,255,255,0.03);
     border: 1px solid rgba(255,255,255,0.06);
     padding: 40px 36px;
@@ -308,6 +312,30 @@
   }
   .phone img { display: block; width: 100%; height: auto; border-radius: 15px; }
   .work-visual:hover .phone { transform: translateY(-8px); }
+  .app-phones {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 4%;
+    padding-top: 24px;
+  }
+  .app-phone {
+    width: 29%;
+    padding: 5px;
+    border-radius: 22px;
+    background: #070e0b;
+    border: 1px solid rgba(232, 230, 223, 0.16);
+    box-shadow: 0 24px 40px -18px rgba(0, 0, 0, 0.85);
+    transform: translateY(var(--lift, 0px));
+    transition: transform 0.35s ease, border-color 0.25s;
+  }
+  .app-phone:nth-child(2) { --lift: -24px; }
+  .app-phone img { display: block; width: 100%; height: auto; border-radius: 17px; }
+  .app-phones:hover .app-phone {
+    transform: translateY(calc(var(--lift, 0px) - 6px));
+    border-color: rgba(181, 139, 74, 0.55);
+  }
+  .work-links { display: flex; flex-wrap: wrap; gap: 14px 28px; }
   .work-kicker {
     font-family: 'Montserrat', sans-serif;
     font-size: 11px;
@@ -585,14 +613,24 @@
   @media (max-width: 960px) {
     .work-feature { column-gap: 44px; }
     .work-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .services-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .service-category,
+    .service-category:nth-child(-n+2),
+    .service-category:nth-child(n+6) { grid-column: span 1; }
+    .service-category:last-child { grid-column: span 2; }
+  }
+  @media (max-width: 620px) {
+    .services-grid { grid-template-columns: 1fr; }
+    .service-category:last-child { grid-column: span 1; }
   }
   @media (max-width: 560px) {
     .work-grid { grid-template-columns: 1fr; gap: 44px; }
     .work-cta { margin-top: 56px; }
   }
   @media (prefers-reduced-motion: reduce) {
-    .browser, .phone, .work-link { transition: none; }
+    .browser, .phone, .app-phone, .work-link { transition: none; }
     .work-visual:hover .browser, .work-visual:hover .phone { transform: none; }
+    .app-phones:hover .app-phone { transform: translateY(var(--lift, 0px)); }
   }
 </style>
 </head>
@@ -624,7 +662,7 @@
   <div class="hero-inner">
     <div class="hero-badge">Web, Marketing &amp; Media</div>
     <h1>Your Brand.<br><em>Better</em> Online.</h1>
-    <p>We build websites, run marketing, and produce content that helps brands grow.</p>
+    <p>We build websites and apps, run marketing, and produce content that helps brands grow.</p>
     <div class="hero-btns">
       <a href="#contact" class="btn-primary">Start a Project</a>
       <a href="#services" class="btn-secondary">View Services</a>
@@ -653,6 +691,19 @@
         <p>Custom-built websites and online stores, designed to turn visitors into customers. We don't use templates.</p>
         <div class="service-tags">
           <span class="tag">Custom Code</span><span class="tag">Shopify</span><span class="tag">WordPress</span><span class="tag">Web Design</span>
+        </div>
+      </div>
+      <div class="service-category">
+        <svg class="service-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="12" y="4" width="20" height="36" rx="3" stroke="#B58B4A" stroke-width="1.5"/>
+          <line x1="12" y1="11" x2="32" y2="11" stroke="#B58B4A" stroke-width="1.5"/>
+          <line x1="12" y1="33" x2="32" y2="33" stroke="#B58B4A" stroke-width="1.5"/>
+          <circle cx="22" cy="36.5" r="1.3" fill="#B58B4A"/>
+        </svg>
+        <h3>Mobile App Development</h3>
+        <p>iPhone and Android apps for your business. We build the app once, publish it to the App Store and Google Play, and keep it updated after launch.</p>
+        <div class="service-tags">
+          <span class="tag">iOS</span><span class="tag">Android</span><span class="tag">React Native</span>
         </div>
       </div>
 <!-- Tech -->
@@ -735,7 +786,7 @@
   <div class="section-inner">
     <div class="section-label">Our Work</div>
     <h2 class="section-title">See It For<br>Yourself</h2>
-    <p class="section-sub">A few of the sites we've built. Every one is live, so click through and look around.</p>
+    <p class="section-sub">A few of the sites and apps we've built. Every one is live, so click through and look around.</p>
 
     <article class="work-feature">
       <a class="work-visual" href="https://ibll.com/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
@@ -776,6 +827,28 @@
           <li>The news archive carried over from the old site</li>
         </ul>
         <a class="work-link" href="https://cawsf.org/" target="_blank" rel="noopener">Visit cawsf.org <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 9L9 3M4 3h5v5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </article>
+
+    <article class="work-feature">
+      <a class="work-visual app-phones" href="https://apps.apple.com/app/id6779708899" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+        <div class="app-phone"><img src="asset/work/epic-app-search.webp" width="540" height="1175" alt="Epic Outdoors app: draw odds search results" loading="lazy" decoding="async"></div>
+        <div class="app-phone"><img src="asset/work/epic-app-unit.webp" width="540" height="1175" alt="Epic Outdoors app: draw odds for one hunt unit" loading="lazy" decoding="async"></div>
+        <div class="app-phone"><img src="asset/work/epic-app-magazine.webp" width="540" height="1175" alt="Epic Outdoors app: magazine issues" loading="lazy" decoding="async"></div>
+      </a>
+      <div class="work-body">
+        <div class="work-kicker">Mobile App &middot; iPhone &amp; Android</div>
+        <h3>Epic Outdoors Hunting App</h3>
+        <p>A research app for western big game hunters, built for iPhone and Android and live in both app stores.</p>
+        <ul class="work-points">
+          <li>Draw odds for every hunt unit, searchable by state, species, and points</li>
+          <li>A points tracker and application deadline reminders</li>
+          <li>Every issue of the magazine, downloadable to read offline</li>
+        </ul>
+        <div class="work-links">
+          <a class="work-link" href="https://apps.apple.com/app/id6779708899" target="_blank" rel="noopener">App Store <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 9L9 3M4 3h5v5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+          <a class="work-link" href="https://play.google.com/store/apps/details?id=com.epicoutdoors.memberportal" target="_blank" rel="noopener">Google Play <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 9L9 3M4 3h5v5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+        </div>
       </div>
     </article>
 
@@ -877,12 +950,12 @@
         <h2 class="section-title">Focused on<br>Your Results</h2>
         <div class="divider"></div>
         <p style="font-size:17px; color:var(--sand); line-height:1.75; margin-bottom:24px;">High Desert Digital is a Utah-based agency for brands that take their online presence seriously. We care more about the results you get than the hours we bill.</p>
-        <p style="font-size:15px; color:var(--sage); line-height:1.75;">If you're launching something new, rebranding, or ready to grow, we build websites that work and marketing that brings in business.</p>
+        <p style="font-size:15px; color:var(--sage); line-height:1.75;">If you're launching something new, rebranding, or ready to grow, we build websites and apps that work and marketing that brings in business.</p>
       </div>
       <div class="why-points">
         <div class="why-point">
           <h4>Everything in One Place</h4>
-          <p>Web, marketing, photo, video, social, and podcast. You don't have to coordinate multiple vendors, because we do all of it and keep it consistent.</p>
+          <p>Web, apps, marketing, photo, video, social, and podcast. You don't have to coordinate multiple vendors, because we do all of it and keep it consistent.</p>
         </div>
         <div class="why-point">
           <h4>Built for Your Brand</h4>
@@ -1005,6 +1078,7 @@
       <option>Shopify</option>
       <option>WordPress</option>
       <option>Web Design</option>
+      <option>Mobile App</option>
       <option>Technical Solutions</option>
       <option>Marketing</option>
       <option>Social Media</option>
