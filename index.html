@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>High Desert Digital — Web, Marketing & Media for Growing Brands</title>
-<meta name="description" content="Web design, Shopify development, and digital marketing for businesses. Built for performance and growth.">
+<title>High Desert Digital | Web, Marketing & Media for Growing Brands</title>
+<meta name="description" content="Web design, Shopify development, marketing, and media production for growing brands. Based in Cedar City, Utah.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -262,8 +262,140 @@
     border-radius: 2px;
   }
 
+  /* WORK */
+  #work { background: var(--forest); }
+  .work-feature {
+    display: grid;
+    grid-template-columns: minmax(0, 7fr) minmax(0, 5fr);
+    gap: 64px;
+    align-items: center;
+    margin-bottom: 104px;
+  }
+  .work-feature.flip { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); }
+  .work-feature.flip .work-visual { order: 2; }
+  .work-visual { position: relative; display: block; text-decoration: none; }
+  .browser {
+    border: 1px solid rgba(232, 230, 223, 0.14);
+    border-radius: 6px;
+    overflow: hidden;
+    background: #16241c;
+    box-shadow: 0 30px 60px -30px rgba(0, 0, 0, 0.8);
+    transition: border-color 0.25s, transform 0.35s ease;
+  }
+  .work-visual:hover .browser { border-color: rgba(181, 139, 74, 0.55); transform: translateY(-4px); }
+  .browser-bar {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    height: 30px;
+    padding: 0 12px;
+    border-bottom: 1px solid rgba(232, 230, 223, 0.08);
+  }
+  .browser-bar i { width: 7px; height: 7px; border-radius: 50%; background: rgba(232, 230, 223, 0.2); }
+  .browser-bar span { margin-left: 8px; font-size: 11px; letter-spacing: 0.04em; color: var(--sage); }
+  .browser img { display: block; width: 100%; height: auto; }
+  .phone {
+    position: absolute;
+    right: -20px;
+    bottom: -36px;
+    width: 24%;
+    padding: 5px;
+    border-radius: 20px;
+    background: #070e0b;
+    border: 1px solid rgba(232, 230, 223, 0.16);
+    box-shadow: 0 24px 40px -16px rgba(0, 0, 0, 0.85);
+    transition: transform 0.35s ease;
+  }
+  .phone img { display: block; width: 100%; height: auto; border-radius: 15px; }
+  .work-visual:hover .phone { transform: translateY(-8px); }
+  .work-kicker {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--bronze);
+    margin-bottom: 12px;
+  }
+  .work-feature h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: clamp(22px, 2.6vw, 30px);
+    line-height: 1.12;
+    text-transform: uppercase;
+    color: var(--bone);
+    margin-bottom: 16px;
+  }
+  .work-feature p { font-size: 16px; font-weight: 300; color: var(--sand); line-height: 1.7; margin-bottom: 22px; }
+  .work-points { list-style: none; display: grid; gap: 10px; margin-bottom: 30px; }
+  .work-points li { position: relative; padding-left: 32px; font-size: 14px; color: var(--bone-dim); line-height: 1.6; }
+  .work-points li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.8em;
+    width: 20px;
+    height: 1px;
+    background: var(--bronze);
+  }
+  .work-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--bronze);
+    text-decoration: none;
+    padding-bottom: 4px;
+    border-bottom: 1px solid rgba(181, 139, 74, 0.35);
+    transition: color 0.2s, border-color 0.2s, gap 0.2s;
+  }
+  .work-link:hover { color: var(--bronze-light); border-color: var(--bronze-light); gap: 14px; }
+  .work-link svg { width: 11px; height: 11px; flex-shrink: 0; }
+  .work-more { display: flex; align-items: center; gap: 20px; margin-bottom: 40px; }
+  .work-more .section-label { margin-bottom: 0; }
+  .work-more::after { content: ''; flex: 1; height: 1px; background: rgba(181, 139, 74, 0.2); }
+  .work-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 52px 28px; }
+  .work-card .work-visual { margin-bottom: 20px; }
+  .work-card .browser-bar { height: 24px; padding: 0 10px; gap: 5px; }
+  .work-card .browser-bar i { width: 6px; height: 6px; }
+  .work-card .browser-bar span { font-size: 10px; }
+  .work-card .work-kicker { font-size: 10px; margin-bottom: 8px; }
+  .work-card h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--bone);
+    margin-bottom: 8px;
+  }
+  .work-card p { font-size: 14px; color: var(--bone-dim); line-height: 1.65; margin-bottom: 16px; }
+  .work-card .work-link { font-size: 11px; text-transform: none; letter-spacing: 0.04em; }
+  .work-cta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 24px;
+    margin-top: 72px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(181, 139, 74, 0.2);
+  }
+  .work-cta p {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 18px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--bone);
+  }
+
   /* WHY */
-  #why { background: var(--forest); }
+  #why { background: #0a1310; }
   .why-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -294,7 +426,7 @@
   .why-point p { font-size: 15px; color: var(--sage); line-height: 1.7; padding-left: 32px; }
 
   /* PROCESS */
-  #process { background: #0a1310; }
+  #process { background: var(--forest); }
   .process-steps {
     display: grid;
     grid-template-columns: repeat(4, 1fr);
@@ -314,7 +446,7 @@
   .step-num {
     width: 56px; height: 56px;
     border-radius: 50%;
-    background: #0a1310;
+    background: var(--forest);
     border: 1px solid rgba(181, 139, 74, 0.4);
     display: flex; align-items: center; justify-content: center;
     font-family: 'Montserrat', sans-serif;
@@ -335,7 +467,7 @@
   .step p { font-size: 14px; color: var(--sage); line-height: 1.65; }
 
   /* CONTACT */
-  #contact { background: var(--forest); }
+  #contact { background: #0a1310; }
   .contact-wrap {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -428,7 +560,7 @@
   .footer-right a { color: var(--bronze); text-decoration: none; }
 
   /* HAMBURGER */
-  .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; }
+  .nav-toggle { display: none; flex-direction: column; gap: 5px; cursor: pointer; padding: 4px; background: none; border: 0; }
   .nav-toggle span { display: block; width: 24px; height: 1.5px; background: var(--bone); border-radius: 2px; transition: 0.3s; }
 
   @media (max-width: 768px) {
@@ -442,10 +574,25 @@
     .contact-wrap { grid-template-columns: 1fr; gap: 48px; }
     .form-row { grid-template-columns: 1fr; }
     .hero h1 { font-size: clamp(36px, 9vw, 60px); }
+    .work-feature, .work-feature.flip { grid-template-columns: 1fr; gap: 56px; margin-bottom: 76px; }
+    .work-feature.flip .work-visual { order: 0; }
+    .phone { right: 12px; bottom: -28px; width: 22%; }
   }
   @media (max-width: 480px) {
     .process-steps { grid-template-columns: 1fr; }
     :root { --max-w: min(1100px, 100% - 32px); }
+  }
+  @media (max-width: 960px) {
+    .work-feature { column-gap: 44px; }
+    .work-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+  @media (max-width: 560px) {
+    .work-grid { grid-template-columns: 1fr; gap: 44px; }
+    .work-cta { margin-top: 56px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .browser, .phone, .work-link { transition: none; }
+    .work-visual:hover .browser, .work-visual:hover .phone { transform: none; }
   }
 </style>
 </head>
@@ -462,6 +609,7 @@
     </button>
     <ul class="nav-links">
       <li><a href="#services">Services</a></li>
+      <li><a href="#work">Work</a></li>
       <li><a href="#why">About</a></li>
       <li><a href="#process">Process</a></li>
       <li><a href="#contact" class="nav-cta">Get Started</a></li>
@@ -476,7 +624,7 @@
   <div class="hero-inner">
     <div class="hero-badge">Web, Marketing &amp; Media</div>
     <h1>Your Brand.<br><em>Better</em> Online.</h1>
-    <p>We build websites, run marketing, and produce content that helps brands grow — from launch to scale.</p>
+    <p>We build websites, run marketing, and produce content that helps brands grow.</p>
     <div class="hero-btns">
       <a href="#contact" class="btn-primary">Start a Project</a>
       <a href="#services" class="btn-secondary">View Services</a>
@@ -489,7 +637,7 @@
   <div class="section-inner">
     <div class="section-label">What We Do</div>
     <h2 class="section-title">Everything Your Brand<br>Needs to Grow Online</h2>
-    <p class="section-sub">From your first website to a full marketing operation — we offer every service under one roof so nothing falls through the cracks.</p>
+    <p class="section-sub">Hire us for a single website or for all of your marketing. Either way, one team handles it, so nothing gets missed.</p>
     <div class="services-grid">
       <div class="service-category">
         <svg class="service-icon" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -502,7 +650,7 @@
           <circle cx="19" cy="12" r="1.5" fill="#B58B4A"/>
         </svg>
         <h3>Web &amp; Development</h3>
-        <p>Custom-built websites and e-commerce stores designed to convert visitors into customers. No templates, no shortcuts.</p>
+        <p>Custom-built websites and online stores, designed to turn visitors into customers. We don't use templates.</p>
         <div class="service-tags">
           <span class="tag">Custom Code</span><span class="tag">Shopify</span><span class="tag">WordPress</span><span class="tag">Web Design</span>
         </div>
@@ -519,7 +667,7 @@
     <line x1="20" y1="30" x2="30" y2="30" stroke="#B58B4A" stroke-width="1.5" stroke-linecap="round"/>
   </svg>
   <h3>Technical Solutions</h3>
-  <p>From computer repair to network setup and ongoing IT support — we keep your technology running so you can focus on your business.</p>
+  <p>We repair computers, set up networks, and keep your technology running with ongoing IT support.</p>
   <div class="service-tags">
     <span class="tag">Computer Repair</span>
     <span class="tag">IT Support</span>
@@ -534,7 +682,7 @@
           <line x1="38" y1="14" x2="38" y2="20" stroke="#B58B4A" stroke-width="1.5"/>
         </svg>
         <h3>Marketing</h3>
-        <p>Strategy and execution that drives real traffic and real leads. Built around your audience and your goals — not a generic playbook.</p>
+        <p>SEO, paid ads, and email that bring in traffic and leads, planned around your audience and your goals.</p>
         <div class="service-tags">
           <span class="tag">SEO</span><span class="tag">Paid Ads</span><span class="tag">Email</span><span class="tag">Strategy</span>
         </div>
@@ -548,7 +696,7 @@
           <line x1="14" y1="24" x2="30" y2="32" stroke="#B58B4A" stroke-width="1.5"/>
         </svg>
         <h3>Social Media</h3>
-        <p>Consistent, on-brand content that builds an audience and keeps your business visible. Management, creation, and strategy included.</p>
+        <p>Consistent, on-brand content that builds an audience and keeps your business visible. We take care of the strategy, the content, and the day-to-day management.</p>
         <div class="service-tags">
           <span class="tag">Management</span><span class="tag">Content</span><span class="tag">Strategy</span>
         </div>
@@ -560,7 +708,7 @@
           <circle cx="18" cy="23" r="5" stroke="#B58B4A" stroke-width="1.5"/>
         </svg>
         <h3>Photography &amp; Video</h3>
-        <p>Professional photo and video that gives your brand the visual identity it deserves — for your website, ads, or social.</p>
+        <p>Professional photo and video for your website, ads, and social media. We shoot it and edit it.</p>
         <div class="service-tags">
           <span class="tag">Photography</span><span class="tag">Videography</span><span class="tag">Editing</span>
         </div>
@@ -573,11 +721,149 @@
           <line x1="16" y1="42" x2="28" y2="42" stroke="#B58B4A" stroke-width="1.5" stroke-linecap="round"/>
         </svg>
         <h3>Podcast Production</h3>
-        <p>End-to-end podcast production — recording, editing, publishing, and promotion. Your voice, polished and distributed.</p>
+        <p>We record, edit, publish, and promote your podcast, start to finish.</p>
         <div class="service-tags">
           <span class="tag">Production</span><span class="tag">Editing</span><span class="tag">Distribution</span>
         </div>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- WORK -->
+<section id="work">
+  <div class="section-inner">
+    <div class="section-label">Our Work</div>
+    <h2 class="section-title">See It For<br>Yourself</h2>
+    <p class="section-sub">A few of the sites we've built. Every one is live, so click through and look around.</p>
+
+    <article class="work-feature">
+      <a class="work-visual" href="https://ibll.com/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+        <div class="browser">
+          <div class="browser-bar"><i></i><i></i><i></i><span>ibll.com</span></div>
+          <img src="asset/work/beam-1440.webp" srcset="asset/work/beam-800.webp 800w, asset/work/beam-1440.webp 1440w" sizes="(max-width: 768px) 100vw, 620px" width="1440" height="900" alt="BEAM Luxury Lighting homepage" loading="lazy" decoding="async">
+        </div>
+        <div class="phone"><img src="asset/work/beam-phone.webp" width="540" height="1169" alt="" loading="lazy" decoding="async"></div>
+      </a>
+      <div class="work-body">
+        <div class="work-kicker">Custom Build &middot; Outdoor Lighting</div>
+        <h3>BEAM Luxury Lighting</h3>
+        <p>A full rebuild of ibll.com for an Arizona luxury outdoor lighting company. We replaced their WordPress site with a fast, custom-coded one built around their photography.</p>
+        <ul class="work-points">
+          <li>Coded from scratch, with no page builder underneath</li>
+          <li>A built-in editor so their team can update pages and photos</li>
+          <li>Search setup, analytics, and a weekly traffic report</li>
+        </ul>
+        <a class="work-link" href="https://ibll.com/" target="_blank" rel="noopener">Visit ibll.com <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 9L9 3M4 3h5v5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </article>
+
+    <article class="work-feature flip">
+      <a class="work-visual" href="https://cawsf.org/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+        <div class="browser">
+          <div class="browser-bar"><i></i><i></i><i></i><span>cawsf.org</span></div>
+          <img src="asset/work/cawsf-1440.webp" srcset="asset/work/cawsf-800.webp 800w, asset/work/cawsf-1440.webp 1440w" sizes="(max-width: 768px) 100vw, 620px" width="1440" height="900" alt="California Wild Sheep Foundation homepage" loading="lazy" decoding="async">
+        </div>
+        <div class="phone"><img src="asset/work/cawsf-phone.webp" width="540" height="1169" alt="" loading="lazy" decoding="async"></div>
+      </a>
+      <div class="work-body">
+        <div class="work-kicker">Custom Build &middot; Conservation Nonprofit</div>
+        <h3>California Wild Sheep Foundation</h3>
+        <p>A new cawsf.org for the California chapter of the Wild Sheep Foundation, rebuilt from the ground up so members can join, give, shop, and register in one place.</p>
+        <ul class="work-points">
+          <li>Memberships, donations, and an online store with card checkout</li>
+          <li>Gala registration that tracks tables and seats as they sell</li>
+          <li>The news archive carried over from the old site</li>
+        </ul>
+        <a class="work-link" href="https://cawsf.org/" target="_blank" rel="noopener">Visit cawsf.org <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 9L9 3M4 3h5v5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </div>
+    </article>
+
+    <div class="work-more"><div class="section-label">More Work</div></div>
+
+    <div class="work-grid">
+      <article class="work-card">
+        <a class="work-visual" href="https://saturdaystrides.com/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+          <div class="browser">
+            <div class="browser-bar"><i></i><i></i><i></i><span>saturdaystrides.com</span></div>
+            <img src="asset/work/saturday-strides-800.webp" srcset="asset/work/saturday-strides-800.webp 800w, asset/work/saturday-strides-1440.webp 1440w" sizes="(max-width: 560px) 100vw, (max-width: 960px) 50vw, 350px" width="1440" height="900" alt="Saturday Strides online store" loading="lazy" decoding="async">
+          </div>
+        </a>
+        <div class="work-kicker">Shopify &middot; Running Apparel</div>
+        <h3>Saturday Strides</h3>
+        <p>A Shopify store for a women's performance running sock brand, with build-your-own bundles and pre-orders.</p>
+        <a class="work-link" href="https://saturdaystrides.com/" target="_blank" rel="noopener">saturdaystrides.com <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 9L9 3M4 3h5v5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </article>
+
+      <article class="work-card">
+        <a class="work-visual" href="https://epicoutdoors.com/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+          <div class="browser">
+            <div class="browser-bar"><i></i><i></i><i></i><span>epicoutdoors.com</span></div>
+            <img src="asset/work/epic-outdoors-800.webp" srcset="asset/work/epic-outdoors-800.webp 800w, asset/work/epic-outdoors-1440.webp 1440w" sizes="(max-width: 560px) 100vw, (max-width: 960px) 50vw, 350px" width="1440" height="900" alt="Epic Outdoors homepage" loading="lazy" decoding="async">
+          </div>
+        </a>
+        <div class="work-kicker">Custom Build &middot; Hunting Research</div>
+        <h3>Epic Outdoors</h3>
+        <p>The home of a western big game hunting research service, with memberships, hunt giveaways, and application deadlines.</p>
+        <a class="work-link" href="https://epicoutdoors.com/" target="_blank" rel="noopener">epicoutdoors.com <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 9L9 3M4 3h5v5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </article>
+
+      <article class="work-card">
+        <a class="work-visual" href="https://breathofliferescue.com/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+          <div class="browser">
+            <div class="browser-bar"><i></i><i></i><i></i><span>breathofliferescue.com</span></div>
+            <img src="asset/work/breath-of-life-800.webp" srcset="asset/work/breath-of-life-800.webp 800w, asset/work/breath-of-life-1440.webp 1440w" sizes="(max-width: 560px) 100vw, (max-width: 960px) 50vw, 350px" width="1440" height="900" alt="Breath of Life Rescue homepage" loading="lazy" decoding="async">
+          </div>
+        </a>
+        <div class="work-kicker">Shopify &middot; Safety Product</div>
+        <h3>Breath of Life Rescue</h3>
+        <p>A Shopify site for a portable choking rescue device in development, with its story, how it works, and a launch waitlist.</p>
+        <a class="work-link" href="https://breathofliferescue.com/" target="_blank" rel="noopener">breathofliferescue.com <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 9L9 3M4 3h5v5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </article>
+
+      <article class="work-card">
+        <a class="work-visual" href="https://ariguide.ai/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+          <div class="browser">
+            <div class="browser-bar"><i></i><i></i><i></i><span>ariguide.ai</span></div>
+            <img src="asset/work/ariguide-800.webp" srcset="asset/work/ariguide-800.webp 800w, asset/work/ariguide-1440.webp 1440w" sizes="(max-width: 560px) 100vw, (max-width: 960px) 50vw, 350px" width="1440" height="900" alt="AriGuide homepage" loading="lazy" decoding="async">
+          </div>
+        </a>
+        <div class="work-kicker">Product Build &middot; Vacation Rentals</div>
+        <h3>AriGuide</h3>
+        <p>An AI guide for vacation rentals. Guests scan a code and ask about the Wi-Fi, parking, appliances, and more. We built the product and its site.</p>
+        <a class="work-link" href="https://ariguide.ai/" target="_blank" rel="noopener">ariguide.ai <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 9L9 3M4 3h5v5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </article>
+
+      <article class="work-card">
+        <a class="work-visual" href="https://sophie-and-nate.pockethost.workers.dev/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+          <div class="browser">
+            <div class="browser-bar"><i></i><i></i><i></i><span>Sample wedding site</span></div>
+            <img src="asset/work/sophie-and-nate-800.webp" srcset="asset/work/sophie-and-nate-800.webp 800w, asset/work/sophie-and-nate-1440.webp 1440w" sizes="(max-width: 560px) 100vw, (max-width: 960px) 50vw, 350px" width="1440" height="900" alt="Sample wedding website for Sophie and Nate" loading="lazy" decoding="async">
+          </div>
+        </a>
+        <div class="work-kicker">Sample Build &middot; Wedding Website</div>
+        <h3>Sophie &amp; Nate</h3>
+        <p>A sample wedding site with RSVPs, digital invitations, the day's schedule, and QR codes guests scan to add their photos.</p>
+        <a class="work-link" href="https://sophie-and-nate.pockethost.workers.dev/" target="_blank" rel="noopener">See the sample <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 9L9 3M4 3h5v5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </article>
+
+      <article class="work-card">
+        <a class="work-visual" href="https://paulmarshalllcsw.com/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">
+          <div class="browser">
+            <div class="browser-bar"><i></i><i></i><i></i><span>paulmarshalllcsw.com</span></div>
+            <img src="asset/work/paul-marshall-800.webp" srcset="asset/work/paul-marshall-800.webp 800w, asset/work/paul-marshall-1440.webp 1440w" sizes="(max-width: 560px) 100vw, (max-width: 960px) 50vw, 350px" width="1440" height="900" alt="Paul Marshall, LCSW homepage" loading="lazy" decoding="async">
+          </div>
+        </a>
+        <div class="work-kicker">Custom Build &middot; Therapy Practice</div>
+        <h3>Paul Marshall, LCSW</h3>
+        <p>A clear, simple site for a licensed clinical social worker offering EMDR therapy and consultation.</p>
+        <a class="work-link" href="https://paulmarshalllcsw.com/" target="_blank" rel="noopener">paulmarshalllcsw.com <svg viewBox="0 0 12 12" fill="none" aria-hidden="true"><path d="M3 9L9 3M4 3h5v5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+      </article>
+    </div>
+
+    <div class="work-cta">
+      <p>Want your site on this list?</p>
+      <a href="#contact" class="btn-primary">Start a Project</a>
     </div>
   </div>
 </section>
@@ -588,27 +874,27 @@
     <div class="why-grid">
       <div class="why-text">
         <div class="section-label">Why High Desert Digital</div>
-        <h2 class="section-title">Results-Focused.<br>No Fluff.</h2>
+        <h2 class="section-title">Focused on<br>Your Results</h2>
         <div class="divider"></div>
-        <p style="font-size:17px; color:var(--sand); line-height:1.75; margin-bottom:24px;">High Desert Digital is a Utah-based agency that partners with brands who are serious about their online presence. We care about results, not billable hours.</p>
-        <p style="font-size:15px; color:var(--sage); line-height:1.75;">Whether you're launching something new, rebranding, or ready to scale — we build digital infrastructure that works and marketing that actually moves the needle.</p>
+        <p style="font-size:17px; color:var(--sand); line-height:1.75; margin-bottom:24px;">High Desert Digital is a Utah-based agency for brands that take their online presence seriously. We care more about the results you get than the hours we bill.</p>
+        <p style="font-size:15px; color:var(--sage); line-height:1.75;">If you're launching something new, rebranding, or ready to grow, we build websites that work and marketing that brings in business.</p>
       </div>
       <div class="why-points">
         <div class="why-point">
-          <h4>Full-Service Under One Roof</h4>
-          <p>Web, marketing, photo, video, social, podcast — no need to coordinate multiple vendors. We handle it all and keep it consistent.</p>
+          <h4>Everything in One Place</h4>
+          <p>Web, marketing, photo, video, social, and podcast. You don't have to coordinate multiple vendors, because we do all of it and keep it consistent.</p>
         </div>
         <div class="why-point">
-          <h4>Custom, Not Cookie-Cutter</h4>
-          <p>Every project is built for your brand specifically. No templates, no recycled designs, no one-size-fits-all solutions.</p>
+          <h4>Built for Your Brand</h4>
+          <p>Every project is built for your brand specifically. We don't recycle designs from one client to the next.</p>
         </div>
         <div class="why-point">
           <h4>Small Agency Attention</h4>
-          <p>You work directly with the people doing the work. No account managers, no handoffs — just direct communication and real ownership.</p>
+          <p>You work directly with the people doing the work. There are no account managers and no handoffs between you and the person responsible for your project.</p>
         </div>
         <div class="why-point">
           <h4>Straightforward Pricing</h4>
-          <p>You'll always know what you're paying for and why. Clear scopes, honest timelines, no surprise invoices.</p>
+          <p>You'll always know what you're paying for and why. You get a clear scope and an honest timeline up front, with no surprise invoices later.</p>
         </div>
       </div>
     </div>
@@ -619,13 +905,13 @@
 <section id="process">
   <div class="section-inner">
     <div class="section-label">How It Works</div>
-    <h2 class="section-title">Simple Process,<br>Serious Results</h2>
-    <p class="section-sub">From the first conversation to launch day, here's what working with us looks like.</p>
+    <h2 class="section-title">A Simple<br>Four-Step Process</h2>
+    <p class="section-sub">Here's what working with us looks like, from the first conversation to launch day.</p>
     <div class="process-steps">
       <div class="step">
         <div class="step-num">01</div>
         <h4>Discovery</h4>
-        <p>We learn about your business, goals, and audience. No fluff — just the right questions to get started.</p>
+        <p>We start by learning about your business, your goals, and your audience, and asking the questions we need answered.</p>
       </div>
       <div class="step">
         <div class="step-num">02</div>
@@ -635,12 +921,12 @@
       <div class="step">
         <div class="step-num">03</div>
         <h4>Build &amp; Create</h4>
-        <p>We execute. You get regular updates and the chance to weigh in at every key milestone.</p>
+        <p>We do the work. You get regular updates and a chance to weigh in at each milestone.</p>
       </div>
       <div class="step">
         <div class="step-num">04</div>
         <h4>Launch &amp; Grow</h4>
-        <p>We deliver a finished product that performs — and stay available to support and grow it with you.</p>
+        <p>We launch the finished product, then stay available to support it and help it grow.</p>
       </div>
     </div>
   </div>
@@ -654,7 +940,7 @@
         <div class="section-label">Get in Touch</div>
         <h2 class="section-title">Let's Build<br>Something</h2>
         <div class="divider"></div>
-        <p>Tell us about your project and we'll get back to you within one business day. No sales pitch — just a real conversation.</p>
+        <p>Tell us about your project and we'll get back to you within one business day to talk it through. No sales pitch.</p>
         <div class="contact-details">
           <div class="contact-row">
             <div class="contact-row-icon">
@@ -747,7 +1033,7 @@
       <div class="footer-tagline">Web, Marketing &amp; Media for Growing Brands</div>
     </div>
     <div class="footer-right">
-      <div>&copy; 2025 High Desert Digital. All rights reserved.</div>
+      <div>&copy; 2026 High Desert Digital. All rights reserved.</div>
       <div style="margin-top:4px;"><a href="mailto:logan@highdesertdigital.com">logan@highdesertdigital.com</a></div>
     </div>
   </div>
